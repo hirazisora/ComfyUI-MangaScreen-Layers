@@ -9,7 +9,7 @@
 
 - **Clean up the lines and blacks after the first pass, then fill the gaps with tone** — the solid layer (line art + blacks) from the first pass is redrawn by Qwen-Image as clean ink. Whatever was black before and is no longer black after the redraw is handed back to the tone layers, continued from the surrounding gradation, so no hole is left.
 - **Layered output** — light tone, dark tone and solid (line art + blacks) come out as three transparent PNGs that never overlap.
-- **Gradation output for the tone areas** — the tone layers can be output as smooth density masks instead of dots, to retouch in Clip Studio Paint or similar and put your own screentone on. Screentone (dots) output is also available.
+- **Gradation output for the tone areas** — the tone layers can be output as smooth density masks instead of dots, to retouch in illustration software and put your own screentone on. Screentone (dots) output is also available.
 - **Tone levels set automatically from the source image** — `level_mode: auto` picks the white point / black point (paper, light tone, dark tone, black) from the image itself with a multi-Otsu split.
 
 ### Comparison with the original
@@ -80,7 +80,7 @@ Use either this fork or the original, not both: they register the same node name
 
 - **一次処理後に線画・ベタをブラッシュアップし、トーンで補間** — 一次処理で作った solid（線画＋ベタ）を Qwen-Image できれいな線画とベタに描き直します。描き直しで黒でなくなった部分は、周囲のグラデーションから続けてトーンレイヤーに補間するので、穴が空きません。
 - **レイヤー分け出力** — 薄いトーン・濃いトーン・solid（線画＋ベタ）を、互いに重ならない3枚の透過 PNG で出力します。
-- **トーン領域のグラデーション出力** — トーンを網点ではなく滑らかな濃淡マスクで出力できます。Clip Studio Paint などで修正し、好きなスクリーントーンを貼る使い方を想定しています。網点での出力もできます。
+- **トーン領域のグラデーション出力** — トーンを網点ではなく滑らかな濃淡マスクで出力できます。イラストソフトで修正し、好きなスクリーントーンを貼る使い方を想定しています。網点での出力もできます。
 - **元画像からトーン化の基準値を自動設定** — `level_mode: auto` で、紙・薄いトーン・濃いトーン・ベタを分ける white_point / black_point を、画像の明るさの分布から multi-Otsu 法で自動で決めます。
 
 ### オリジナル版との比較
