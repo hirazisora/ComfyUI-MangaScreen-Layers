@@ -1,13 +1,13 @@
 [project]
-name = "comfyui-mangascreen"
-description = "Manga / black & white comic filter: turn an illustration into a clean B&W manga or comic page with crisp lines, flat tone areas, real screentone (halftone), white lines inside solid black, and panel framing. Tone Layers fork: light tone / dark tone / solid as separate transparent layers, edit-model cleanup of the line art, gradation output and automatic tone levels."
+name = "comfyui-mangascreen-layers"
+description = "Manga / black & white comic filter: turn an illustration into a clean B&W manga or comic page with crisp lines, flat tone areas, real screentone (halftone), white lines inside solid black, and panel framing. Layers fork: light tone / dark tone / solid as separate transparent layers, edit-model cleanup of the line art, gradation output and automatic tone levels."
 version = "0.3.0"
 license = { file = "LICENSE" }
 dependencies = ["opencv-python", "numpy"]
 
 [project.urls]
-Repository = "https://github.com/hirazisora/ComfyUI-MangaScreen"
+Repository = "https://github.com/hirazisora/ComfyUI-MangaScreen-Layers"
 
 [tool.comfy]
 PublisherId = "ashukae"
-DisplayName = "Manga Screen"
+DisplayName = "Manga Screen Layers"

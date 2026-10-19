@@ -1,4 +1,4 @@
-# ComfyUI-MangaScreen — Tone Layers fork
+# ComfyUI-MangaScreen-Layers
 
 > This is a fork of [ashukae/ComfyUI-MangaScreen](https://github.com/ashukae/ComfyUI-MangaScreen).
 > The original nodes (Manga Finish / Manga Levels / Manga Panel) and workflows are unchanged; this fork adds
@@ -71,7 +71,7 @@ The edit instructions (`edit_instruction`, `cleanup_instruction`) and the stage 
 
 ```
 cd ComfyUI/custom_nodes
-git clone https://github.com/hirazisora/ComfyUI-MangaScreen
+git clone https://github.com/hirazisora/ComfyUI-MangaScreen-Layers
 ```
 
 Use either this fork or the original, not both: they register the same node names.
@@ -108,7 +108,7 @@ Use either this fork or the original, not both: they register the same node name
 
 ```
 cd ComfyUI/custom_nodes
-git clone https://github.com/hirazisora/ComfyUI-MangaScreen
+git clone https://github.com/hirazisora/ComfyUI-MangaScreen-Layers
 ```
 
 オリジナル版とは同じノード名を登録するので、どちらか一方だけを入れてください。
