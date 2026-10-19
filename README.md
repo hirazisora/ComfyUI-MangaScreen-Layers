@@ -11,10 +11,11 @@
 - **Layered output** — light tone, dark tone and solid (line art + blacks) come out as three transparent PNGs that never overlap.
 - **Gradation output for the tone areas** — the tone layers can be output as smooth density masks instead of dots, to retouch in illustration software and put your own screentone on. Screentone (dots) output is also available.
 - **Tone levels set automatically from the source image** — `level_mode: auto` picks the white point / black point (paper, light tone, dark tone, black) from the image itself with a multi-Otsu split.
+- **Tone flattening** — `tone_flatten` pulls the gradation toward the flat light / dark tone. 0 keeps the gradation as it is, 1.0 makes every tone completely flat (no gradation).
 
 ### Comparison with the original
 
-Same Qwen-Image redraw (fixed seed) for both. *Original* is the Manga Finish node with the settings of the QWEN-Manga workflow; *This fork* is the QWEN-Manga-ToneLayers workflow with its default settings (layers stacked onto white).
+Both versions process **the same Qwen-Image edit** (2nd column): the image is redrawn once, and that one result is fed to the original Manga Finish and to this fork. *Original* is the Manga Finish node with the settings of the QWEN-Manga workflow; *This fork* is the QWEN-Manga-ToneLayers workflow with its default settings (layers stacked onto white).
 
 ![Comparison 1](examples/tonelayers/compare_1.jpg)
 ![Comparison 2](examples/tonelayers/compare_2.jpg)
@@ -28,6 +29,14 @@ Layered output (transparent areas shown as a checkerboard):
 Gradation output vs screentone output:
 
 ![Gradation output](examples/tonelayers/gradation.jpg)
+
+Tone flattening, minimum (`tone_flatten` 0.0) vs maximum (1.0), screentone output:
+
+![Tone flattening, screentone](examples/tonelayers/flatten.jpg)
+
+The same with gradation output, where the difference is easier to see:
+
+![Tone flattening, gradation](examples/tonelayers/flatten_gradation.jpg)
 
 ### Nodes
 
@@ -82,10 +91,11 @@ Use either this fork or the original, not both: they register the same node name
 - **レイヤー分け出力** — 薄いトーン・濃いトーン・solid（線画＋ベタ）を、互いに重ならない3枚の透過 PNG で出力します。
 - **トーン領域のグラデーション出力** — トーンを網点ではなく滑らかな濃淡マスクで出力できます。イラストソフトで修正し、好きなスクリーントーンを貼る使い方を想定しています。網点での出力もできます。
 - **元画像からトーン化の基準値を自動設定** — `level_mode: auto` で、紙・薄いトーン・濃いトーン・ベタを分ける white_point / black_point を、画像の明るさの分布から multi-Otsu 法で自動で決めます。
+- **トーンのフラット化** — `tone_flatten` で、グラデーションを薄いトーン / 濃いトーンのフラットな濃さへ寄せます。0 でグラデーションのまま、1.0 でグラデーションの無い完全なフラットになります。
 
 ### オリジナル版との比較
 
-段階1の Qwen-Image による描き直しは両方で同じもの（シード固定）を使っています。*Original* は QWEN-Manga ワークフローの設定の Manga Finish ノード、*This fork* は QWEN-Manga-ToneLayers ワークフローの既定設定です（3レイヤーを白地に重ねたもの）。比較画像・レイヤー出力・グラデーション出力の図は英語セクションにあります。
+オリジナル版とこのフォークは、**同じ Qwen-Image の編集結果**（比較図の2列目）を処理しています。描き直しは1回だけ行い、その結果をオリジナル版の Manga Finish とこのフォークの両方に渡しています。*Original* は QWEN-Manga ワークフローの設定の Manga Finish ノード、*This fork* は QWEN-Manga-ToneLayers ワークフローの既定設定です（3レイヤーを白地に重ねたもの）。比較画像・レイヤー出力・グラデーション出力・フラット化（`tone_flatten` 0.0 と 1.0）の図は英語セクションにあります。
 
 ### ノード
 
