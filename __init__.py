@@ -5,6 +5,9 @@ the image already has, pushes the values into a few flat regions and prints them
 Manga Levels: grayscale + levels, the light path when no edit model is used.
 
 Manga Panel: frames the finished page as a panel (crop, border, margin) with a light paper/ink look.
+
+Manga Finish Layers / Manga Solid Refine / Manga Layer Flatten (tone_layers.py): the same page as
+separate light tone / dark tone / solid layers, with the solid layer cleaned up by an edit model.
 """
 import cv2
 import numpy as np
@@ -258,3 +261,9 @@ class MangaLevels:
 
 NODE_CLASS_MAPPINGS = {"MangaLevels": MangaLevels, "MangaFinish": MangaFinish, "MangaPanel": MangaPanel}
 NODE_DISPLAY_NAME_MAPPINGS = {"MangaLevels": "Manga Levels", "MangaFinish": "Manga Finish", "MangaPanel": "Manga Panel"}
+
+from .tone_layers import NODE_CLASS_MAPPINGS as _LAYER_NODES, NODE_DISPLAY_NAME_MAPPINGS as _LAYER_NAMES  # noqa: E402
+
+NODE_CLASS_MAPPINGS.update(_LAYER_NODES)
+NODE_DISPLAY_NAME_MAPPINGS.update(_LAYER_NAMES)
+WEB_DIRECTORY = "./js"   # level_mode widget behaviour of Manga Finish Layers

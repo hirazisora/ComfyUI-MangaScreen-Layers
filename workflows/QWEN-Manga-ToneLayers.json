@@ -1,0 +1,3875 @@
+{
+ "id": "fb22bacf-d979-4537-b058-608f8b7b2a4f",
+ "revision": 0,
+ "last_node_id": 52,
+ "last_link_id": 100,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "LoadImage",
+   "pos": [
+    0,
+    0
+   ],
+   "size": [
+    320,
+    360
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "アップロードするファイルを選択",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "画像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      77
+     ]
+    },
+    {
+     "localized_name": "マスク",
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "title": "Input image",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "your_image.png",
+    "image"
+   ],
+   "widgets_values_named": {
+    "image": "your_image.png",
+    "upload": "image"
+   }
+  },
+  {
+   "id": 15,
+   "type": "MangaFinishLayers",
+   "pos": [
+    860,
+    0
+   ],
+   "size": [
+    330,
+    560
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 83
+    },
+    {
+     "localized_name": "pen_lines",
+     "name": "pen_lines",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 84
+    },
+    {
+     "localized_name": "screen_lines",
+     "name": "screen_lines",
+     "type": "INT",
+     "widget": {
+      "name": "screen_lines"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "level_mode",
+     "name": "level_mode",
+     "type": "COMBO",
+     "widget": {
+      "name": "level_mode"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "white_point",
+     "name": "white_point",
+     "type": "FLOAT",
+     "widget": {
+      "name": "white_point"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "black_point",
+     "name": "black_point",
+     "type": "FLOAT",
+     "widget": {
+      "name": "black_point"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "light_tone",
+     "name": "light_tone",
+     "type": "FLOAT",
+     "widget": {
+      "name": "light_tone"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "dark_tone",
+     "name": "dark_tone",
+     "type": "FLOAT",
+     "widget": {
+      "name": "dark_tone"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "gradation",
+     "name": "gradation",
+     "type": "FLOAT",
+     "widget": {
+      "name": "gradation"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_split",
+     "name": "tone_split",
+     "type": "FLOAT",
+     "widget": {
+      "name": "tone_split"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "pen_threshold",
+     "name": "pen_threshold",
+     "type": "FLOAT",
+     "widget": {
+      "name": "pen_threshold"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "white_lines",
+     "name": "white_lines",
+     "type": "FLOAT",
+     "widget": {
+      "name": "white_lines"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_output",
+     "name": "tone_output",
+     "type": "COMBO",
+     "widget": {
+      "name": "tone_output"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "mask_scale",
+     "name": "mask_scale",
+     "type": "COMBO",
+     "widget": {
+      "name": "mask_scale"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "lines_in_solid",
+     "name": "lines_in_solid",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "lines_in_solid"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "ink_color",
+     "name": "ink_color",
+     "type": "STRING",
+     "widget": {
+      "name": "ink_color"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "line_cleanup",
+     "name": "line_cleanup",
+     "type": "FLOAT",
+     "widget": {
+      "name": "line_cleanup"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_flatten",
+     "name": "tone_flatten",
+     "type": "FLOAT",
+     "widget": {
+      "name": "tone_flatten"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "line_antialias",
+     "name": "line_antialias",
+     "type": "FLOAT",
+     "widget": {
+      "name": "line_antialias"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "light_tone",
+     "name": "light_tone",
+     "type": "IMAGE",
+     "links": [
+      51
+     ]
+    },
+    {
+     "localized_name": "dark_tone",
+     "name": "dark_tone",
+     "type": "IMAGE",
+     "links": [
+      52
+     ]
+    },
+    {
+     "localized_name": "solid",
+     "name": "solid",
+     "type": "IMAGE",
+     "links": [
+      53,
+      85
+     ]
+    },
+    {
+     "localized_name": "white_point",
+     "name": "white_point",
+     "type": "FLOAT",
+     "links": [
+      35
+     ]
+    },
+    {
+     "localized_name": "black_point",
+     "name": "black_point",
+     "type": "FLOAT",
+     "links": [
+      36
+     ]
+    }
+   ],
+   "title": "Manga Finish Layers",
+   "properties": {
+    "Node name for S&R": "MangaFinishLayers"
+   },
+   "widgets_values": [
+    250,
+    "auto",
+    0.8,
+    0.3,
+    0.18,
+    0.42,
+    1,
+    0,
+    0.3,
+    0.4,
+    "gradation (smooth)",
+    "density",
+    true,
+    "#000000",
+    0.4,
+    0,
+    0
+   ],
+   "widgets_values_named": {
+    "screen_lines": 250,
+    "level_mode": "auto",
+    "white_point": 0.8,
+    "black_point": 0.3,
+    "light_tone": 0.18,
+    "dark_tone": 0.42,
+    "gradation": 1,
+    "tone_split": 0,
+    "pen_threshold": 0.3,
+    "white_lines": 0.4,
+    "tone_output": "gradation (smooth)",
+    "mask_scale": "density",
+    "lines_in_solid": true,
+    "ink_color": "#000000",
+    "line_cleanup": 0.4,
+    "tone_flatten": 0,
+    "line_antialias": 0
+   }
+  },
+  {
+   "id": 27,
+   "type": "ImageCompare",
+   "pos": [
+    3180,
+    0
+   ],
+   "size": [
+    620,
+    740
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "image_a",
+     "name": "image_a",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 91
+    },
+    {
+     "localized_name": "image_b",
+     "name": "image_b",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 97
+    },
+    {
+     "localized_name": "compare_view",
+     "name": "compare_view",
+     "type": "IMAGECOMPARE",
+     "widget": {
+      "name": "compare_view"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [],
+   "title": "Solid before / after",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "ImageCompare"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  },
+  {
+   "id": 37,
+   "type": "MangaSolidRefine",
+   "pos": [
+    1730,
+    0
+   ],
+   "size": [
+    330,
+    400
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "light_tone",
+     "name": "light_tone",
+     "type": "IMAGE",
+     "link": 51
+    },
+    {
+     "localized_name": "dark_tone",
+     "name": "dark_tone",
+     "type": "IMAGE",
+     "link": 52
+    },
+    {
+     "localized_name": "solid",
+     "name": "solid",
+     "type": "IMAGE",
+     "link": 53
+    },
+    {
+     "localized_name": "refined",
+     "name": "refined",
+     "type": "IMAGE",
+     "link": 92
+    },
+    {
+     "localized_name": "threshold",
+     "name": "threshold",
+     "type": "FLOAT",
+     "widget": {
+      "name": "threshold"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "edge_softness",
+     "name": "edge_softness",
+     "type": "FLOAT",
+     "widget": {
+      "name": "edge_softness"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "despeckle",
+     "name": "despeckle",
+     "type": "INT",
+     "widget": {
+      "name": "despeckle"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_fill",
+     "name": "tone_fill",
+     "type": "FLOAT",
+     "widget": {
+      "name": "tone_fill"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "fill_floor",
+     "name": "fill_floor",
+     "type": "FLOAT",
+     "widget": {
+      "name": "fill_floor"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "ink_color",
+     "name": "ink_color",
+     "type": "STRING",
+     "widget": {
+      "name": "ink_color"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_flatten",
+     "name": "tone_flatten",
+     "type": "FLOAT",
+     "widget": {
+      "name": "tone_flatten"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "line_antialias",
+     "name": "line_antialias",
+     "type": "FLOAT",
+     "widget": {
+      "name": "line_antialias"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "tone_output",
+     "name": "tone_output",
+     "type": "COMBO",
+     "widget": {
+      "name": "tone_output"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "screen_lines",
+     "name": "screen_lines",
+     "type": "INT",
+     "widget": {
+      "name": "screen_lines"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "light_tone",
+     "name": "light_tone",
+     "type": "IMAGE",
+     "links": [
+      55,
+      93
+     ]
+    },
+    {
+     "localized_name": "dark_tone",
+     "name": "dark_tone",
+     "type": "IMAGE",
+     "links": [
+      56,
+      94
+     ]
+    },
+    {
+     "localized_name": "solid",
+     "name": "solid",
+     "type": "IMAGE",
+     "links": [
+      57,
+      95
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MangaSolidRefine"
+   },
+   "widgets_values": [
+    0.5,
+    0.2,
+    12,
+    1.0,
+    1.0,
+    "#000000",
+    0.7,
+    0.5,
+    "screentone (dots)",
+    250
+   ],
+   "widgets_values_named": {
+    "threshold": 0.5,
+    "edge_softness": 0.2,
+    "despeckle": 8,
+    "tone_fill": 1,
+    "fill_floor": 0,
+    "ink_color": "#000000",
+    "tone_flatten": 0,
+    "line_antialias": 0.75,
+    "tone_output": "screentone (dots)",
+    "screen_lines": 250
+   }
+  },
+  {
+   "id": 38,
+   "type": "PreviewImage",
+   "pos": [
+    2120,
+    0
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 55
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "title": "Preview light_tone (RGBA)",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewImage"
+   }
+  },
+  {
+   "id": 39,
+   "type": "PreviewImage",
+   "pos": [
+    2120,
+    490
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 56
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "title": "Preview dark_tone (RGBA)",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewImage"
+   }
+  },
+  {
+   "id": 40,
+   "type": "PreviewImage",
+   "pos": [
+    2120,
+    980
+   ],
+   "size": [
+    380,
+    420
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 57
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "title": "Preview solid (RGBA)",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewImage"
+   }
+  },
+  {
+   "id": 42,
+   "type": "PreviewImage",
+   "pos": [
+    2560,
+    0
+   ],
+   "size": [
+    560,
+    740
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 96
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "title": "Page preview",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewImage"
+   }
+  },
+  {
+   "id": 47,
+   "type": "PreviewAny",
+   "pos": [
+    860,
+    692
+   ],
+   "size": [
+    330,
+    122
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "ソース",
+     "name": "source",
+     "type": "*",
+     "link": 35
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "文字列",
+     "name": "STRING",
+     "type": "STRING",
+     "links": []
+    }
+   ],
+   "title": "Used white_point",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewAny"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  },
+  {
+   "id": 48,
+   "type": "PreviewAny",
+   "pos": [
+    860,
+    912
+   ],
+   "size": [
+    330,
+    122
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "ソース",
+     "name": "source",
+     "type": "*",
+     "link": 36
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "文字列",
+     "name": "STRING",
+     "type": "STRING",
+     "links": []
+    }
+   ],
+   "title": "Used black_point",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "Node name for S&R": "PreviewAny"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  },
+  {
+   "id": 49,
+   "type": "ffcfc7e6-a33f-404b-b8fb-be6ca3575d89",
+   "pos": [
+    0,
+    430
+   ],
+   "size": [
+    300,
+    106
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      78,
+      86
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      79,
+      87
+     ]
+    },
+    {
+     "localized_name": "モデル",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      80,
+      88
+     ]
+    },
+    {
+     "localized_name": "サンプラー",
+     "name": "SAMPLER",
+     "type": "SAMPLER",
+     "links": [
+      81,
+      89
+     ]
+    },
+    {
+     "localized_name": "シグマ",
+     "name": "SIGMAS",
+     "type": "SIGMAS",
+     "links": [
+      82,
+      90
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "previewExposures": []
+   }
+  },
+  {
+   "id": 50,
+   "type": "33c7a717-4892-4d61-83af-54cc175cbbeb",
+   "pos": [
+    380,
+    0
+   ],
+   "size": [
+    420,
+    420
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "画像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 77
+    },
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 78
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 79
+    },
+    {
+     "localized_name": "モデル",
+     "name": "model",
+     "type": "MODEL",
+     "link": 80
+    },
+    {
+     "localized_name": "サンプラー",
+     "name": "sampler",
+     "type": "SAMPLER",
+     "link": 81
+    },
+    {
+     "localized_name": "シグマ",
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 82
+    },
+    {
+     "name": "edit_instruction",
+     "type": "STRING",
+     "widget": {
+      "name": "edit_instruction"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "manga_image",
+     "localized_name": "画像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      83
+     ]
+    },
+    {
+     "label": "pen_lines",
+     "localized_name": "画像_1",
+     "name": "IMAGE_1",
+     "type": "IMAGE",
+     "links": [
+      84
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "previewExposures": []
+   },
+   "widgets_values": [
+    "Redraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight, solid black for dark hair and deep shadows, white paper for skin and light surfaces, ink hatching lines for shadows on cloth, and regular screentone only where a mid tone is needed. No color and no smooth gradients. Do not add anything that is not in <image1>."
+   ],
+   "widgets_values_named": {
+    "edit_instruction": "Redraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight, solid black for dark hair and deep shadows, white paper for skin and light surfaces, ink hatching lines for shadows on cloth, and regular screentone only where a mid tone is needed. No color and no smooth gradients. Do not add anything that is not in <image1>."
+   }
+  },
+  {
+   "id": 51,
+   "type": "988e7372-d811-43ac-b25c-31f56523da55",
+   "pos": [
+    1250,
+    0
+   ],
+   "size": [
+    420,
+    420
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "solid",
+     "localized_name": "layer_1",
+     "name": "layer_1",
+     "type": "IMAGE",
+     "link": 85
+    },
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 86
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 87
+    },
+    {
+     "localized_name": "モデル",
+     "name": "model",
+     "type": "MODEL",
+     "link": 88
+    },
+    {
+     "localized_name": "サンプラー",
+     "name": "sampler",
+     "type": "SAMPLER",
+     "link": 89
+    },
+    {
+     "localized_name": "シグマ",
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 90
+    },
+    {
+     "name": "cleanup_instruction",
+     "type": "STRING",
+     "widget": {
+      "name": "cleanup_instruction"
+     },
+     "link": null
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "solid_before",
+     "localized_name": "画像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      91
+     ]
+    },
+    {
+     "label": "refined_solid",
+     "localized_name": "画像_1",
+     "name": "IMAGE_1",
+     "type": "IMAGE",
+     "links": [
+      92
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "previewExposures": []
+   },
+   "widgets_values": [
+    "Redraw <image1> as clean final manga inks: crisp, smooth, confident black line art and clean solid black fills on pure white paper. Keep every line and every black area exactly where it is in <image1>, with the same shapes and the same thickness. Clean up jagged, fuzzy and broken edges, remove stray specks, dots and noise, and close small gaps in the lines. Pure black and white only: no grey, no screentone, no shading, no hatching that is not in <image1>, and do not add anything that is not in <image1>.",
+    1
+   ],
+   "widgets_values_named": {
+    "cleanup_instruction": "Redraw <image1> as clean final manga inks: crisp, smooth, confident black line art and clean solid black fills on pure white paper. Keep every line and every black area exactly where it is in <image1>, with the same shapes and the same thickness. Clean up jagged, fuzzy and broken edges, remove stray specks, dots and noise, and close small gaps in the lines. Pure black and white only: no grey, no screentone, no shading, no hatching that is not in <image1>, and do not add anything that is not in <image1>.",
+    "seed": 1
+   }
+  },
+  {
+   "id": 52,
+   "type": "51ce4d87-87fd-4730-8c27-47b108176634",
+   "pos": [
+    1730,
+    476
+   ],
+   "size": [
+    300,
+    66
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "light_tone",
+     "localized_name": "layer_1",
+     "name": "layer_1",
+     "type": "IMAGE",
+     "link": 93
+    },
+    {
+     "label": "dark_tone",
+     "localized_name": "layer_2",
+     "name": "layer_2",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 94
+    },
+    {
+     "label": "solid",
+     "localized_name": "layer_3",
+     "name": "layer_3",
+     "type": "IMAGE",
+     "link": 95
+    }
+   ],
+   "outputs": [
+    {
+     "label": "page",
+     "localized_name": "画像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      96
+     ]
+    },
+    {
+     "label": "solid_after",
+     "localized_name": "画像_1",
+     "name": "IMAGE_1",
+     "type": "IMAGE",
+     "links": [
+      97
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.37.0",
+    "previewExposures": []
+   }
+  }
+ ],
+ "links": [
+  [
+   35,
+   15,
+   3,
+   47,
+   0,
+   "FLOAT"
+  ],
+  [
+   36,
+   15,
+   4,
+   48,
+   0,
+   "FLOAT"
+  ],
+  [
+   51,
+   15,
+   0,
+   37,
+   0,
+   "IMAGE"
+  ],
+  [
+   52,
+   15,
+   1,
+   37,
+   1,
+   "IMAGE"
+  ],
+  [
+   53,
+   15,
+   2,
+   37,
+   2,
+   "IMAGE"
+  ],
+  [
+   55,
+   37,
+   0,
+   38,
+   0,
+   "IMAGE"
+  ],
+  [
+   56,
+   37,
+   1,
+   39,
+   0,
+   "IMAGE"
+  ],
+  [
+   57,
+   37,
+   2,
+   40,
+   0,
+   "IMAGE"
+  ],
+  [
+   77,
+   1,
+   0,
+   50,
+   0,
+   "IMAGE"
+  ],
+  [
+   78,
+   49,
+   0,
+   50,
+   1,
+   "CLIP"
+  ],
+  [
+   79,
+   49,
+   1,
+   50,
+   2,
+   "VAE"
+  ],
+  [
+   80,
+   49,
+   2,
+   50,
+   3,
+   "MODEL"
+  ],
+  [
+   81,
+   49,
+   3,
+   50,
+   4,
+   "SAMPLER"
+  ],
+  [
+   82,
+   49,
+   4,
+   50,
+   5,
+   "SIGMAS"
+  ],
+  [
+   83,
+   50,
+   0,
+   15,
+   0,
+   "IMAGE"
+  ],
+  [
+   84,
+   50,
+   1,
+   15,
+   1,
+   "IMAGE"
+  ],
+  [
+   85,
+   15,
+   2,
+   51,
+   0,
+   "IMAGE"
+  ],
+  [
+   86,
+   49,
+   0,
+   51,
+   1,
+   "CLIP"
+  ],
+  [
+   87,
+   49,
+   1,
+   51,
+   2,
+   "VAE"
+  ],
+  [
+   88,
+   49,
+   2,
+   51,
+   3,
+   "MODEL"
+  ],
+  [
+   89,
+   49,
+   3,
+   51,
+   4,
+   "SAMPLER"
+  ],
+  [
+   90,
+   49,
+   4,
+   51,
+   5,
+   "SIGMAS"
+  ],
+  [
+   91,
+   51,
+   0,
+   27,
+   0,
+   "IMAGE"
+  ],
+  [
+   92,
+   51,
+   1,
+   37,
+   3,
+   "IMAGE"
+  ],
+  [
+   93,
+   37,
+   0,
+   52,
+   0,
+   "IMAGE"
+  ],
+  [
+   94,
+   37,
+   1,
+   52,
+   1,
+   "IMAGE"
+  ],
+  [
+   95,
+   37,
+   2,
+   52,
+   2,
+   "IMAGE"
+  ],
+  [
+   96,
+   52,
+   0,
+   42,
+   0,
+   "IMAGE"
+  ],
+  [
+   97,
+   52,
+   1,
+   27,
+   1,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "definitions": {
+  "subgraphs": [
+   {
+    "id": "ffcfc7e6-a33f-404b-b8fb-be6ca3575d89",
+    "version": 1,
+    "state": {
+     "lastGroupId": 2,
+     "lastNodeId": 52,
+     "lastLinkId": 100,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Qwen Image 2.1 Models",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -188,
+      -24,
+      128,
+      48
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      60,
+      -74,
+      128,
+      148
+     ]
+    },
+    "inputs": [],
+    "outputs": [
+     {
+      "id": "70598e17-1145-4f1e-b71b-5f97fdcae6ee",
+      "name": "CLIP",
+      "type": "CLIP",
+      "linkIds": [
+       2,
+       2
+      ],
+      "localized_name": "CLIP",
+      "pos": [
+       24,
+       24
+      ]
+     },
+     {
+      "id": "13e2b1f5-0213-40bc-8a2c-bae841c2ae6e",
+      "name": "VAE",
+      "type": "VAE",
+      "linkIds": [
+       15,
+       15,
+       15,
+       15
+      ],
+      "localized_name": "VAE",
+      "pos": [
+       24,
+       44
+      ]
+     },
+     {
+      "id": "4f06d2dc-9833-47b8-89b8-4368514c375f",
+      "name": "MODEL",
+      "type": "MODEL",
+      "linkIds": [
+       7,
+       7
+      ],
+      "localized_name": "モデル",
+      "pos": [
+       24,
+       64
+      ]
+     },
+     {
+      "id": "1c92d5c8-e1d1-4155-bfec-ef591bd08430",
+      "name": "SAMPLER",
+      "type": "SAMPLER",
+      "linkIds": [
+       11,
+       11
+      ],
+      "localized_name": "サンプラー",
+      "pos": [
+       24,
+       84
+      ]
+     },
+     {
+      "id": "16cad9b8-da44-48ba-9753-5748892d8a40",
+      "name": "SIGMAS",
+      "type": "SIGMAS",
+      "linkIds": [
+       12,
+       12
+      ],
+      "localized_name": "シグマ",
+      "pos": [
+       24,
+       104
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 3,
+      "type": "UNETLoader",
+      "pos": [
+       -1500,
+       710
+      ],
+      "size": [
+       340,
+       82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "unet_name",
+        "name": "unet_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "unet_name"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "重みdtype",
+        "name": "weight_dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "weight_dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "モデル",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         6
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+       "qwen_image_2.1_turbo_int8_convrot.safetensors",
+       "default"
+      ],
+      "widgets_values_named": {
+       "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+       "weight_dtype": "default"
+      }
+     },
+     {
+      "id": 4,
+      "type": "CLIPLoader",
+      "pos": [
+       -1500,
+       830
+      ],
+      "size": [
+       340,
+       106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip名",
+        "name": "clip_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "clip_name"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "タイプ",
+        "name": "type",
+        "type": "COMBO",
+        "widget": {
+         "name": "type"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "デバイス",
+        "name": "device",
+        "shape": 7,
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "CLIP",
+        "name": "CLIP",
+        "type": "CLIP",
+        "links": [
+         2
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+       "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+       "qwen_image",
+       "default"
+      ],
+      "widgets_values_named": {
+       "clip_name": "qwen3-vl-8b-heretic-1.3.0-int8convrot.safetensors",
+       "type": "qwen_image",
+       "device": "default"
+      }
+     },
+     {
+      "id": 5,
+      "type": "VAELoader",
+      "pos": [
+       -1500,
+       970
+      ],
+      "size": [
+       340,
+       60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "vae_name",
+        "name": "vae_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "vae_name"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "VAE",
+        "name": "VAE",
+        "type": "VAE",
+        "links": [
+         15
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+       "qwen_image_2.1_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+       "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+     },
+     {
+      "id": 8,
+      "type": "QwenImage21Cache",
+      "pos": [
+       -1120,
+       740
+      ],
+      "size": [
+       420,
+       82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "model",
+        "name": "model",
+        "type": "MODEL",
+        "link": 6
+       },
+       {
+        "localized_name": "device",
+        "name": "device",
+        "type": "COMBO",
+        "widget": {
+         "name": "device"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "dtype",
+        "name": "dtype",
+        "type": "COMBO",
+        "widget": {
+         "name": "dtype"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "モデル",
+        "name": "MODEL",
+        "type": "MODEL",
+        "links": [
+         7
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "QwenImage21Cache"
+      },
+      "widgets_values": [
+       "cpu",
+       "default"
+      ],
+      "widgets_values_named": {
+       "device": "cpu",
+       "dtype": "default"
+      }
+     },
+     {
+      "id": 11,
+      "type": "KSamplerSelect",
+      "pos": [
+       -1120,
+       1070
+      ],
+      "size": [
+       420,
+       60
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "サンプラー名",
+        "name": "sampler_name",
+        "type": "COMBO",
+        "widget": {
+         "name": "sampler_name"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "サンプラー",
+        "name": "SAMPLER",
+        "type": "SAMPLER",
+        "links": [
+         11
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+       "euler"
+      ],
+      "widgets_values_named": {
+       "sampler_name": "euler"
+      }
+     },
+     {
+      "id": 12,
+      "type": "ManualSigmas",
+      "pos": [
+       -1120,
+       1170
+      ],
+      "size": [
+       420,
+       60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "シグマ",
+        "name": "sigmas",
+        "type": "STRING",
+        "widget": {
+         "name": "sigmas"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "シグマ",
+        "name": "SIGMAS",
+        "type": "SIGMAS",
+        "links": [
+         12
+        ]
+       }
+      ],
+      "title": "Turbo 8-step sigmas",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "ManualSigmas"
+      },
+      "widgets_values": [
+       "1.0, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0.0"
+      ],
+      "widgets_values_named": {
+       "sigmas": "1.0, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+     }
+    ],
+    "groups": [],
+    "links": [
+     {
+      "id": 6,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 8,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 2,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 15,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 7,
+      "origin_id": 8,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 2,
+      "type": "MODEL"
+     },
+     {
+      "id": 11,
+      "origin_id": 11,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 3,
+      "type": "SAMPLER"
+     },
+     {
+      "id": 12,
+      "origin_id": 12,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 4,
+      "type": "SIGMAS"
+     }
+    ],
+    "extra": {}
+   },
+   {
+    "id": "33c7a717-4892-4d61-83af-54cc175cbbeb",
+    "version": 1,
+    "state": {
+     "lastGroupId": 2,
+     "lastNodeId": 52,
+     "lastLinkId": 100,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Stage 1: Qwen Manga Redraw",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -188,
+      -84,
+      128,
+      168
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      60,
+      -44,
+      128,
+      88
+     ]
+    },
+    "inputs": [
+     {
+      "id": "853d9a20-234e-46dc-92e6-bfc58bbb3bd4",
+      "name": "image",
+      "type": "IMAGE",
+      "linkIds": [
+       1
+      ],
+      "localized_name": "画像",
+      "pos": [
+       51,
+       24
+      ]
+     },
+     {
+      "id": "04d72dd2-27da-4a2e-8378-f7f775375c82",
+      "name": "clip",
+      "type": "CLIP",
+      "linkIds": [
+       65
+      ],
+      "localized_name": "clip",
+      "pos": [
+       51,
+       44
+      ]
+     },
+     {
+      "id": "800d8990-e1c9-4905-8148-c5daefc39283",
+      "name": "vae",
+      "type": "VAE",
+      "linkIds": [
+       68,
+       67
+      ],
+      "localized_name": "vae",
+      "shape": 7,
+      "pos": [
+       51,
+       64
+      ]
+     },
+     {
+      "id": "f5c451a9-7119-4d18-a954-f6d40cf93d59",
+      "name": "model",
+      "type": "MODEL",
+      "linkIds": [
+       71
+      ],
+      "localized_name": "モデル",
+      "pos": [
+       51,
+       84
+      ]
+     },
+     {
+      "id": "d25cd2f8-b20d-40ec-82e0-baec31583fa2",
+      "name": "sampler",
+      "type": "SAMPLER",
+      "linkIds": [
+       73
+      ],
+      "localized_name": "サンプラー",
+      "pos": [
+       51,
+       104
+      ]
+     },
+     {
+      "id": "88ff9af6-9cc5-4bc6-b955-18943758afcf",
+      "name": "sigmas",
+      "type": "SIGMAS",
+      "linkIds": [
+       75
+      ],
+      "localized_name": "シグマ",
+      "pos": [
+       51,
+       124
+      ]
+     },
+     {
+      "id": "40c81f88-7a58-4621-9620-1e283ff8b93f",
+      "name": "edit_instruction",
+      "type": "STRING",
+      "linkIds": [
+       98
+      ],
+      "pos": [
+       0,
+       0
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "a6f29e3b-38bb-4df9-bffc-0e6ee38864cd",
+      "name": "IMAGE",
+      "type": "IMAGE",
+      "linkIds": [
+       33
+      ],
+      "localized_name": "画像",
+      "label": "manga_image",
+      "pos": [
+       24,
+       24
+      ]
+     },
+     {
+      "id": "ce4d72e8-fd0a-4911-86b0-f30701671d41",
+      "name": "IMAGE_1",
+      "type": "IMAGE",
+      "linkIds": [
+       34
+      ],
+      "localized_name": "画像_1",
+      "label": "pen_lines",
+      "pos": [
+       24,
+       44
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 2,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+       -1500,
+       560
+      ],
+      "size": [
+       340,
+       110
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "画像",
+        "name": "image",
+        "type": "IMAGE",
+        "link": 1
+       },
+       {
+        "localized_name": "拡大方法",
+        "name": "upscale_method",
+        "type": "COMBO",
+        "widget": {
+         "name": "upscale_method"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "メガピクセル",
+        "name": "megapixels",
+        "type": "FLOAT",
+        "widget": {
+         "name": "megapixels"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "解像度ステップ",
+        "name": "resolution_steps",
+        "type": "INT",
+        "widget": {
+         "name": "resolution_steps"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         3
+        ]
+       }
+      ],
+      "title": "Working size (2 MP)",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+       "lanczos",
+       2,
+       32
+      ],
+      "widgets_values_named": {
+       "upscale_method": "lanczos",
+       "megapixels": 2,
+       "resolution_steps": 32
+      }
+     },
+     {
+      "id": 6,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+       -1120,
+       80
+      ],
+      "size": [
+       420,
+       300
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "値",
+        "name": "value",
+        "type": "STRING",
+        "widget": {
+         "name": "value"
+        },
+        "link": 98
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "文字列",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         5
+        ]
+       }
+      ],
+      "title": "Edit instruction",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+       "Redraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight, solid black for dark hair and deep shadows, white paper for skin and light surfaces, ink hatching lines for shadows on cloth, and regular screentone only where a mid tone is needed. No color and no smooth gradients. Do not add anything that is not in <image1>."
+      ],
+      "widgets_values_named": {
+       "value": "Redraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight, solid black for dark hair and deep shadows, white paper for skin and light surfaces, ink hatching lines for shadows on cloth, and regular screentone only where a mid tone is needed. No color and no smooth gradients. Do not add anything that is not in <image1>."
+      }
+     },
+     {
+      "id": 7,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+       -1120,
+       420
+      ],
+      "size": [
+       420,
+       286
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 65
+       },
+       {
+        "localized_name": "image_1",
+        "name": "images.image_1",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": 3
+       },
+       {
+        "localized_name": "image_2",
+        "name": "images.image_2",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "shape": 7,
+        "type": "VAE",
+        "link": 68
+       },
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 5
+       },
+       {
+        "localized_name": "negative_prompt",
+        "name": "negative_prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "negative_prompt"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "resolution",
+        "name": "resolution",
+        "type": "INT",
+        "widget": {
+         "name": "resolution"
+        },
+        "link": null
+       },
+       {
+        "name": "images.image_3",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "name": "images.image_4",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "links": [
+         8
+        ]
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "links": []
+       },
+       {
+        "localized_name": "latent",
+        "name": "latent",
+        "type": "LATENT",
+        "links": [
+         13
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+       "",
+       "",
+       0
+      ],
+      "widgets_values_named": {
+       "prompt": "",
+       "negative_prompt": "",
+       "resolution": 0
+      }
+     },
+     {
+      "id": 9,
+      "type": "BasicGuider",
+      "pos": [
+       -1120,
+       860
+      ],
+      "size": [
+       420,
+       50
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "モデル",
+        "name": "model",
+        "type": "MODEL",
+        "link": 71
+       },
+       {
+        "localized_name": "コンディショニング",
+        "name": "conditioning",
+        "type": "CONDITIONING",
+        "link": 8
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "ガイダー",
+        "name": "GUIDER",
+        "type": "GUIDER",
+        "links": [
+         10
+        ]
+       }
+      ],
+      "title": "Guider (cfg 1)",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "BasicGuider"
+      }
+     },
+     {
+      "id": 10,
+      "type": "RandomNoise",
+      "pos": [
+       -1120,
+       950
+      ],
+      "size": [
+       420,
+       82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "ノイズシード",
+        "name": "noise_seed",
+        "type": "INT",
+        "widget": {
+         "name": "noise_seed"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "ノイズ",
+        "name": "NOISE",
+        "type": "NOISE",
+        "links": [
+         9
+        ]
+       }
+      ],
+      "title": "Seed",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+       1,
+       "randomize"
+      ],
+      "widgets_values_named": {
+       "noise_seed": 1,
+       "control_after_generate": "randomize"
+      }
+     },
+     {
+      "id": 13,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+       -660,
+       80
+      ],
+      "size": [
+       300,
+       326
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "ノイズ",
+        "name": "noise",
+        "type": "NOISE",
+        "link": 9
+       },
+       {
+        "localized_name": "ガイダー",
+        "name": "guider",
+        "type": "GUIDER",
+        "link": 10
+       },
+       {
+        "localized_name": "サンプラー",
+        "name": "sampler",
+        "type": "SAMPLER",
+        "link": 73
+       },
+       {
+        "localized_name": "シグマ",
+        "name": "sigmas",
+        "type": "SIGMAS",
+        "link": 75
+       },
+       {
+        "localized_name": "潜在イメージ",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 13
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "出力",
+        "name": "output",
+        "type": "LATENT",
+        "links": [
+         14
+        ]
+       },
+       {
+        "localized_name": "ノイズ除去出力",
+        "name": "denoised_output",
+        "type": "LATENT",
+        "links": []
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "SamplerCustomAdvanced"
+      }
+     },
+     {
+      "id": 14,
+      "type": "VAEDecode",
+      "pos": [
+       -660,
+       460
+      ],
+      "size": [
+       300,
+       50
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "サンプル",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 14
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 67
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         21,
+         29,
+         33
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "VAEDecode"
+      }
+     },
+     {
+      "id": 21,
+      "type": "Manga2Anime_LineArt_Preprocessor",
+      "pos": [
+       -660,
+       1140
+      ],
+      "size": [
+       300,
+       82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "image",
+        "name": "image",
+        "type": "IMAGE",
+        "link": 21
+       },
+       {
+        "localized_name": "resolution",
+        "name": "resolution",
+        "shape": 7,
+        "type": "INT",
+        "widget": {
+         "name": "resolution"
+        },
+        "link": 30
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         34
+        ]
+       }
+      ],
+      "title": "Pen lines (Manga Line Extraction)",
+      "properties": {
+       "cnr_id": "comfyui_controlnet_aux",
+       "ver": "136f125c89aed92ced1b6fbb491e13719b72fcc0",
+       "Node name for S&R": "Manga2Anime_LineArt_Preprocessor"
+      },
+      "widgets_values": [
+       1280
+      ],
+      "widgets_values_named": {
+       "resolution": 1280
+      }
+     },
+     {
+      "id": 26,
+      "type": "GetImageSize",
+      "pos": [
+       -660,
+       1260
+      ],
+      "size": [
+       300,
+       90
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "画像",
+        "name": "image",
+        "type": "IMAGE",
+        "link": 29
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "width",
+        "name": "width",
+        "type": "INT",
+        "links": [
+         30
+        ]
+       },
+       {
+        "localized_name": "height",
+        "name": "height",
+        "type": "INT",
+        "links": []
+       },
+       {
+        "localized_name": "batch_size",
+        "name": "batch_size",
+        "type": "INT",
+        "links": []
+       }
+      ],
+      "title": "Pen line resolution = image width",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "GetImageSize"
+      }
+     },
+     {
+      "id": 28,
+      "type": "Note",
+      "pos": [
+       -1500,
+       1070
+      ],
+      "size": [
+       420,
+       420
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Edit instruction B",
+      "properties": {
+       "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+       "Bolder edit instruction: dark colours go solid black. Paste it into \"Edit instruction\" and set black_point to 0.40.\n\nRedraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight. Decide every area as paper white, screentone, or solid black ink: anything that is dark or black in color in <image1> (dark clothing, dark hair, deep shadows) is filled with solid black ink, with its folds and seams left as thin white lines; skin and light surfaces stay white paper; mid colors become flat screentone. No grey gradients, no soft airbrushed shading, no color. Do not add anything that is not in <image1>."
+      ],
+      "widgets_values_named": {
+       "text": "Bolder edit instruction: dark colours go solid black. Paste it into \"Edit instruction\" and set black_point to 0.40.\n\nRedraw <image1> as a printed black-and-white manga page panel, as if inked by the original artist for serialization. Keep the exact composition, pose, character design, face, expression and drawing style of <image1>. Use confident ink lines with varied line weight. Decide every area as paper white, screentone, or solid black ink: anything that is dark or black in color in <image1> (dark clothing, dark hair, deep shadows) is filled with solid black ink, with its folds and seams left as thin white lines; skin and light surfaces stay white paper; mid colors become flat screentone. No grey gradients, no soft airbrushed shading, no color. Do not add anything that is not in <image1>."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+     }
+    ],
+    "groups": [],
+    "links": [
+     {
+      "id": 3,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 5,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 4,
+      "type": "STRING"
+     },
+     {
+      "id": 8,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 9,
+      "origin_id": 10,
+      "origin_slot": 0,
+      "target_id": 13,
+      "target_slot": 0,
+      "type": "NOISE"
+     },
+     {
+      "id": 10,
+      "origin_id": 9,
+      "origin_slot": 0,
+      "target_id": 13,
+      "target_slot": 1,
+      "type": "GUIDER"
+     },
+     {
+      "id": 13,
+      "origin_id": 7,
+      "origin_slot": 2,
+      "target_id": 13,
+      "target_slot": 4,
+      "type": "LATENT"
+     },
+     {
+      "id": 14,
+      "origin_id": 13,
+      "origin_slot": 0,
+      "target_id": 14,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 21,
+      "origin_id": 14,
+      "origin_slot": 0,
+      "target_id": 21,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 30,
+      "origin_id": 26,
+      "origin_slot": 0,
+      "target_id": 21,
+      "target_slot": 1,
+      "type": "INT"
+     },
+     {
+      "id": 29,
+      "origin_id": 14,
+      "origin_slot": 0,
+      "target_id": 26,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 1,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 2,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 65,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 68,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 7,
+      "target_slot": 3,
+      "type": "VAE"
+     },
+     {
+      "id": 67,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 14,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 71,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 9,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 73,
+      "origin_id": -10,
+      "origin_slot": 4,
+      "target_id": 13,
+      "target_slot": 2,
+      "type": "SAMPLER"
+     },
+     {
+      "id": 75,
+      "origin_id": -10,
+      "origin_slot": 5,
+      "target_id": 13,
+      "target_slot": 3,
+      "type": "SIGMAS"
+     },
+     {
+      "id": 33,
+      "origin_id": 14,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 34,
+      "origin_id": 21,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 98,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 6,
+      "target_slot": 0,
+      "type": "STRING"
+     }
+    ],
+    "extra": {}
+   },
+   {
+    "id": "988e7372-d811-43ac-b25c-31f56523da55",
+    "version": 1,
+    "state": {
+     "lastGroupId": 2,
+     "lastNodeId": 52,
+     "lastLinkId": 100,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Stage 2: Qwen Solid Cleanup",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -188,
+      -84,
+      128,
+      168
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      60,
+      -44,
+      128,
+      88
+     ]
+    },
+    "inputs": [
+     {
+      "id": "0bf8e1e4-018c-4499-b533-1e3c9c73ba35",
+      "name": "layer_1",
+      "type": "IMAGE",
+      "linkIds": [
+       37
+      ],
+      "localized_name": "layer_1",
+      "label": "solid",
+      "pos": [
+       51,
+       24
+      ]
+     },
+     {
+      "id": "a96373c0-3fc1-491b-b10c-ded366344146",
+      "name": "clip",
+      "type": "CLIP",
+      "linkIds": [
+       66
+      ],
+      "localized_name": "clip",
+      "pos": [
+       51,
+       44
+      ]
+     },
+     {
+      "id": "c5039810-7d78-4a4e-a820-a4138ab639f1",
+      "name": "vae",
+      "type": "VAE",
+      "linkIds": [
+       69,
+       70
+      ],
+      "localized_name": "vae",
+      "shape": 7,
+      "pos": [
+       51,
+       64
+      ]
+     },
+     {
+      "id": "f047bab0-2e84-4971-918b-fefa8ef372e1",
+      "name": "model",
+      "type": "MODEL",
+      "linkIds": [
+       72
+      ],
+      "localized_name": "モデル",
+      "pos": [
+       51,
+       84
+      ]
+     },
+     {
+      "id": "1c95bb67-370d-4950-81f9-8ce379be21c8",
+      "name": "sampler",
+      "type": "SAMPLER",
+      "linkIds": [
+       74
+      ],
+      "localized_name": "サンプラー",
+      "pos": [
+       51,
+       104
+      ]
+     },
+     {
+      "id": "73fbd06d-e1fb-4a82-9387-ed070f93ce1c",
+      "name": "sigmas",
+      "type": "SIGMAS",
+      "linkIds": [
+       76
+      ],
+      "localized_name": "シグマ",
+      "pos": [
+       51,
+       124
+      ]
+     },
+     {
+      "id": "0250fea8-e398-4ad4-b87c-dc606282f5d0",
+      "name": "cleanup_instruction",
+      "type": "STRING",
+      "linkIds": [
+       99
+      ],
+      "pos": [
+       0,
+       0
+      ]
+     },
+     {
+      "id": "cd3dc8f7-30c2-44d2-819b-7346975bb3af",
+      "name": "seed",
+      "type": "INT",
+      "linkIds": [
+       100
+      ],
+      "pos": [
+       0,
+       0
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "c7316bbd-5d83-4cd0-966e-99afb6abb2dc",
+      "name": "IMAGE",
+      "type": "IMAGE",
+      "linkIds": [
+       63
+      ],
+      "localized_name": "画像",
+      "label": "solid_before",
+      "pos": [
+       24,
+       24
+      ]
+     },
+     {
+      "id": "a9532419-7823-4af3-90fd-f146d2407708",
+      "name": "IMAGE_1",
+      "type": "IMAGE",
+      "linkIds": [
+       54
+      ],
+      "localized_name": "画像_1",
+      "label": "refined_solid",
+      "pos": [
+       24,
+       44
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 30,
+      "type": "MangaLayerFlatten",
+      "pos": [
+       0,
+       80
+      ],
+      "size": [
+       300,
+       106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "layer_1",
+        "name": "layer_1",
+        "type": "IMAGE",
+        "link": 37
+       },
+       {
+        "localized_name": "layer_2",
+        "name": "layer_2",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "layer_3",
+        "name": "layer_3",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "paper_color",
+        "name": "paper_color",
+        "type": "STRING",
+        "widget": {
+         "name": "paper_color"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         39,
+         63
+        ]
+       }
+      ],
+      "title": "Solid (before) -> RGB",
+      "properties": {
+       "Node name for S&R": "MangaLayerFlatten"
+      },
+      "widgets_values": [
+       "#ffffff"
+      ],
+      "widgets_values_named": {
+       "paper_color": "#ffffff"
+      }
+     },
+     {
+      "id": 31,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+       0,
+       230
+      ],
+      "size": [
+       420,
+       260
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "値",
+        "name": "value",
+        "type": "STRING",
+        "widget": {
+         "name": "value"
+        },
+        "link": 99
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "文字列",
+        "name": "STRING",
+        "type": "STRING",
+        "links": [
+         41
+        ]
+       }
+      ],
+      "title": "Solid cleanup instruction",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+       "Redraw <image1> as clean final manga inks: crisp, smooth, confident black line art and clean solid black fills on pure white paper. Keep every line and every black area exactly where it is in <image1>, with the same shapes and the same thickness. Clean up jagged, fuzzy and broken edges, remove stray specks, dots and noise, and close small gaps in the lines. Pure black and white only: no grey, no screentone, no shading, no hatching that is not in <image1>, and do not add anything that is not in <image1>."
+      ],
+      "widgets_values_named": {
+       "value": "Redraw <image1> as clean final manga inks: crisp, smooth, confident black line art and clean solid black fills on pure white paper. Keep every line and every black area exactly where it is in <image1>, with the same shapes and the same thickness. Clean up jagged, fuzzy and broken edges, remove stray specks, dots and noise, and close small gaps in the lines. Pure black and white only: no grey, no screentone, no shading, no hatching that is not in <image1>, and do not add anything that is not in <image1>."
+      }
+     },
+     {
+      "id": 32,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+       0,
+       530
+      ],
+      "size": [
+       420,
+       286
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "clip",
+        "name": "clip",
+        "type": "CLIP",
+        "link": 66
+       },
+       {
+        "localized_name": "image_1",
+        "name": "images.image_1",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": 39
+       },
+       {
+        "localized_name": "image_2",
+        "name": "images.image_2",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "shape": 7,
+        "type": "VAE",
+        "link": 69
+       },
+       {
+        "localized_name": "prompt",
+        "name": "prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "prompt"
+        },
+        "link": 41
+       },
+       {
+        "localized_name": "negative_prompt",
+        "name": "negative_prompt",
+        "type": "STRING",
+        "widget": {
+         "name": "negative_prompt"
+        },
+        "link": null
+       },
+       {
+        "localized_name": "resolution",
+        "name": "resolution",
+        "type": "INT",
+        "widget": {
+         "name": "resolution"
+        },
+        "link": null
+       },
+       {
+        "name": "images.image_3",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "name": "images.image_4",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "positive",
+        "name": "positive",
+        "type": "CONDITIONING",
+        "links": [
+         43
+        ]
+       },
+       {
+        "localized_name": "negative",
+        "name": "negative",
+        "type": "CONDITIONING",
+        "links": []
+       },
+       {
+        "localized_name": "latent",
+        "name": "latent",
+        "type": "LATENT",
+        "links": [
+         48
+        ]
+       }
+      ],
+      "title": "Encode (solid cleanup)",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+       "",
+       "",
+       0
+      ],
+      "widgets_values_named": {
+       "prompt": "",
+       "negative_prompt": "",
+       "resolution": 0
+      }
+     },
+     {
+      "id": 33,
+      "type": "BasicGuider",
+      "pos": [
+       0,
+       860
+      ],
+      "size": [
+       300,
+       50
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "モデル",
+        "name": "model",
+        "type": "MODEL",
+        "link": 72
+       },
+       {
+        "localized_name": "コンディショニング",
+        "name": "conditioning",
+        "type": "CONDITIONING",
+        "link": 43
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "ガイダー",
+        "name": "GUIDER",
+        "type": "GUIDER",
+        "links": [
+         45
+        ]
+       }
+      ],
+      "title": "Guider (solid cleanup)",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "BasicGuider"
+      }
+     },
+     {
+      "id": 34,
+      "type": "RandomNoise",
+      "pos": [
+       0,
+       950
+      ],
+      "size": [
+       300,
+       82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "ノイズシード",
+        "name": "noise_seed",
+        "type": "INT",
+        "widget": {
+         "name": "noise_seed"
+        },
+        "link": 100
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "ノイズ",
+        "name": "NOISE",
+        "type": "NOISE",
+        "links": [
+         44
+        ]
+       }
+      ],
+      "title": "Seed (solid cleanup)",
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+       1,
+       "fixed"
+      ],
+      "widgets_values_named": {
+       "noise_seed": 1,
+       "control_after_generate": "fixed"
+      }
+     },
+     {
+      "id": 35,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+       460,
+       80
+      ],
+      "size": [
+       300,
+       326
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "ノイズ",
+        "name": "noise",
+        "type": "NOISE",
+        "link": 44
+       },
+       {
+        "localized_name": "ガイダー",
+        "name": "guider",
+        "type": "GUIDER",
+        "link": 45
+       },
+       {
+        "localized_name": "サンプラー",
+        "name": "sampler",
+        "type": "SAMPLER",
+        "link": 74
+       },
+       {
+        "localized_name": "シグマ",
+        "name": "sigmas",
+        "type": "SIGMAS",
+        "link": 76
+       },
+       {
+        "localized_name": "潜在イメージ",
+        "name": "latent_image",
+        "type": "LATENT",
+        "link": 48
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "出力",
+        "name": "output",
+        "type": "LATENT",
+        "links": [
+         49
+        ]
+       },
+       {
+        "localized_name": "ノイズ除去出力",
+        "name": "denoised_output",
+        "type": "LATENT",
+        "links": []
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "SamplerCustomAdvanced"
+      }
+     },
+     {
+      "id": 36,
+      "type": "VAEDecode",
+      "pos": [
+       460,
+       460
+      ],
+      "size": [
+       300,
+       50
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "サンプル",
+        "name": "samples",
+        "type": "LATENT",
+        "link": 49
+       },
+       {
+        "localized_name": "vae",
+        "name": "vae",
+        "type": "VAE",
+        "link": 70
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         54
+        ]
+       }
+      ],
+      "properties": {
+       "cnr_id": "comfy-core",
+       "ver": "0.37.0",
+       "Node name for S&R": "VAEDecode"
+      }
+     },
+     {
+      "id": 46,
+      "type": "Note",
+      "pos": [
+       0,
+       1080
+      ],
+      "size": [
+       420,
+       320
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "How stage 2 works",
+      "properties": {
+       "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+       "Stage 2: Qwen Image redraws the solid layer as clean line art + solid black.\n\nManga Solid Refine then:\n- turns the redraw into the new solid layer (threshold, edge_softness, despeckle)\n- finds what was solid before but is not solid now\n- fills that area in light_tone / dark_tone with the surrounding gradation (tone_fill)\n- fill_floor keeps vanished black masses as tone even when the surroundings are white\n\nIf Qwen moves lines or changes details, change the seed or make the instruction stricter."
+      ],
+      "widgets_values_named": {
+       "text": "Stage 2: Qwen Image redraws the solid layer as clean line art + solid black.\n\nManga Solid Refine then:\n- turns the redraw into the new solid layer (threshold, edge_softness, despeckle)\n- finds what was solid before but is not solid now\n- fills that area in light_tone / dark_tone with the surrounding gradation (tone_fill)\n- fill_floor keeps vanished black masses as tone even when the surroundings are white\n\nIf Qwen moves lines or changes details, change the seed or make the instruction stricter."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+     }
+    ],
+    "groups": [],
+    "links": [
+     {
+      "id": 39,
+      "origin_id": 30,
+      "origin_slot": 0,
+      "target_id": 32,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 41,
+      "origin_id": 31,
+      "origin_slot": 0,
+      "target_id": 32,
+      "target_slot": 4,
+      "type": "STRING"
+     },
+     {
+      "id": 43,
+      "origin_id": 32,
+      "origin_slot": 0,
+      "target_id": 33,
+      "target_slot": 1,
+      "type": "CONDITIONING"
+     },
+     {
+      "id": 44,
+      "origin_id": 34,
+      "origin_slot": 0,
+      "target_id": 35,
+      "target_slot": 0,
+      "type": "NOISE"
+     },
+     {
+      "id": 45,
+      "origin_id": 33,
+      "origin_slot": 0,
+      "target_id": 35,
+      "target_slot": 1,
+      "type": "GUIDER"
+     },
+     {
+      "id": 48,
+      "origin_id": 32,
+      "origin_slot": 2,
+      "target_id": 35,
+      "target_slot": 4,
+      "type": "LATENT"
+     },
+     {
+      "id": 49,
+      "origin_id": 35,
+      "origin_slot": 0,
+      "target_id": 36,
+      "target_slot": 0,
+      "type": "LATENT"
+     },
+     {
+      "id": 37,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 30,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 66,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 32,
+      "target_slot": 0,
+      "type": "CLIP"
+     },
+     {
+      "id": 69,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 32,
+      "target_slot": 3,
+      "type": "VAE"
+     },
+     {
+      "id": 70,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 36,
+      "target_slot": 1,
+      "type": "VAE"
+     },
+     {
+      "id": 72,
+      "origin_id": -10,
+      "origin_slot": 3,
+      "target_id": 33,
+      "target_slot": 0,
+      "type": "MODEL"
+     },
+     {
+      "id": 74,
+      "origin_id": -10,
+      "origin_slot": 4,
+      "target_id": 35,
+      "target_slot": 2,
+      "type": "SAMPLER"
+     },
+     {
+      "id": 76,
+      "origin_id": -10,
+      "origin_slot": 5,
+      "target_id": 35,
+      "target_slot": 3,
+      "type": "SIGMAS"
+     },
+     {
+      "id": 63,
+      "origin_id": 30,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 54,
+      "origin_id": 36,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 99,
+      "origin_id": -10,
+      "origin_slot": 6,
+      "target_id": 31,
+      "target_slot": 0,
+      "type": "STRING"
+     },
+     {
+      "id": 100,
+      "origin_id": -10,
+      "origin_slot": 7,
+      "target_id": 34,
+      "target_slot": 0,
+      "type": "INT"
+     }
+    ],
+    "extra": {}
+   },
+   {
+    "id": "51ce4d87-87fd-4730-8c27-47b108176634",
+    "version": 1,
+    "state": {
+     "lastGroupId": 2,
+     "lastNodeId": 52,
+     "lastLinkId": 100,
+     "lastRerouteId": 0
+    },
+    "revision": 0,
+    "config": {},
+    "name": "Preview Prep",
+    "inputNode": {
+     "id": -10,
+     "bounding": [
+      -188,
+      -54,
+      128,
+      108
+     ]
+    },
+    "outputNode": {
+     "id": -20,
+     "bounding": [
+      60,
+      -44,
+      128,
+      88
+     ]
+    },
+    "inputs": [
+     {
+      "id": "d7d4c0ab-265f-4401-8d1e-b9ecd7eee692",
+      "name": "layer_1",
+      "type": "IMAGE",
+      "linkIds": [
+       58
+      ],
+      "localized_name": "layer_1",
+      "label": "light_tone",
+      "pos": [
+       51,
+       24
+      ]
+     },
+     {
+      "id": "cdb079b8-8ae8-4cad-a9c5-26d227d547c9",
+      "name": "layer_2",
+      "type": "IMAGE",
+      "linkIds": [
+       59
+      ],
+      "localized_name": "layer_2",
+      "label": "dark_tone",
+      "shape": 7,
+      "pos": [
+       51,
+       44
+      ]
+     },
+     {
+      "id": "9d5de9a0-8b44-4039-939c-34ef6a033f60",
+      "name": "layer_3",
+      "type": "IMAGE",
+      "linkIds": [
+       60,
+       62
+      ],
+      "localized_name": "layer_3",
+      "label": "solid",
+      "shape": 7,
+      "pos": [
+       51,
+       64
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "id": "801ca6c4-880c-4f0d-9366-78c5cf2eab4f",
+      "name": "IMAGE",
+      "type": "IMAGE",
+      "linkIds": [
+       61
+      ],
+      "localized_name": "画像",
+      "label": "page",
+      "pos": [
+       24,
+       24
+      ]
+     },
+     {
+      "id": "a8494a46-da99-4311-8399-15e525167a49",
+      "name": "IMAGE_1",
+      "type": "IMAGE",
+      "linkIds": [
+       64
+      ],
+      "localized_name": "画像_1",
+      "label": "solid_after",
+      "pos": [
+       24,
+       44
+      ]
+     }
+    ],
+    "widgets": [],
+    "nodes": [
+     {
+      "id": 41,
+      "type": "MangaLayerFlatten",
+      "pos": [
+       1220,
+       80
+      ],
+      "size": [
+       300,
+       106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "layer_1",
+        "name": "layer_1",
+        "type": "IMAGE",
+        "link": 58
+       },
+       {
+        "localized_name": "layer_2",
+        "name": "layer_2",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": 59
+       },
+       {
+        "localized_name": "layer_3",
+        "name": "layer_3",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": 60
+       },
+       {
+        "localized_name": "paper_color",
+        "name": "paper_color",
+        "type": "STRING",
+        "widget": {
+         "name": "paper_color"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         61
+        ]
+       }
+      ],
+      "title": "Page preview (all layers)",
+      "properties": {
+       "Node name for S&R": "MangaLayerFlatten"
+      },
+      "widgets_values": [
+       "#ffffff"
+      ],
+      "widgets_values_named": {
+       "paper_color": "#ffffff"
+      }
+     },
+     {
+      "id": 43,
+      "type": "MangaLayerFlatten",
+      "pos": [
+       1220,
+       920
+      ],
+      "size": [
+       300,
+       106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+       {
+        "localized_name": "layer_1",
+        "name": "layer_1",
+        "type": "IMAGE",
+        "link": 62
+       },
+       {
+        "localized_name": "layer_2",
+        "name": "layer_2",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "layer_3",
+        "name": "layer_3",
+        "shape": 7,
+        "type": "IMAGE",
+        "link": null
+       },
+       {
+        "localized_name": "paper_color",
+        "name": "paper_color",
+        "type": "STRING",
+        "widget": {
+         "name": "paper_color"
+        },
+        "link": null
+       }
+      ],
+      "outputs": [
+       {
+        "localized_name": "画像",
+        "name": "IMAGE",
+        "type": "IMAGE",
+        "links": [
+         64
+        ]
+       }
+      ],
+      "title": "Solid (after) -> RGB",
+      "properties": {
+       "Node name for S&R": "MangaLayerFlatten"
+      },
+      "widgets_values": [
+       "#ffffff"
+      ],
+      "widgets_values_named": {
+       "paper_color": "#ffffff"
+      }
+     }
+    ],
+    "groups": [],
+    "links": [
+     {
+      "id": 58,
+      "origin_id": -10,
+      "origin_slot": 0,
+      "target_id": 41,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 59,
+      "origin_id": -10,
+      "origin_slot": 1,
+      "target_id": 41,
+      "target_slot": 1,
+      "type": "IMAGE"
+     },
+     {
+      "id": 60,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 41,
+      "target_slot": 2,
+      "type": "IMAGE"
+     },
+     {
+      "id": 62,
+      "origin_id": -10,
+      "origin_slot": 2,
+      "target_id": 43,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 61,
+      "origin_id": 41,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 0,
+      "type": "IMAGE"
+     },
+     {
+      "id": 64,
+      "origin_id": 43,
+      "origin_slot": 0,
+      "target_id": -20,
+      "target_slot": 1,
+      "type": "IMAGE"
+     }
+    ],
+    "extra": {}
+   }
+  ]
+ },
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.5,
+   "offset": [
+    40,
+    40
+   ]
+  }
+ },
+ "version": 0.4
+}

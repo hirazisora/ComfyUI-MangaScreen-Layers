@@ -1,4 +1,121 @@
-# ComfyUI-MangaScreen
+# ComfyUI-MangaScreen — Tone Layers fork
+
+> This is a fork of [ashukae/ComfyUI-MangaScreen](https://github.com/ashukae/ComfyUI-MangaScreen).
+> The original nodes (Manga Finish / Manga Levels / Manga Panel) and workflows are unchanged; this fork adds
+> three nodes and a workflow that turn the result into **separate, editable layers**.
+> The fork additions are described first ([English](#fork-additions) · [日本語](#フォークでの追加変更点)), followed by the original README.
+
+## Fork additions
+
+- **Clean up the lines and blacks after the first pass, then fill the gaps with tone** — the solid layer (line art + blacks) from the first pass is redrawn by Qwen-Image as clean ink. Whatever was black before and is no longer black after the redraw is handed back to the tone layers, continued from the surrounding gradation, so no hole is left.
+- **Layered output** — light tone, dark tone and solid (line art + blacks) come out as three transparent PNGs that never overlap.
+- **Gradation output for the tone areas** — the tone layers can be output as smooth density masks instead of dots, to retouch in Clip Studio Paint or similar and put your own screentone on. Screentone (dots) output is also available.
+- **Tone levels set automatically from the source image** — `level_mode: auto` picks the white point / black point (paper, light tone, dark tone, black) from the image itself with a multi-Otsu split.
+
+### Comparison with the original
+
+Same Qwen-Image redraw (fixed seed) for both. *Original* is the Manga Finish node with the settings of the QWEN-Manga workflow; *This fork* is the QWEN-Manga-ToneLayers workflow with its default settings (layers stacked onto white).
+
+![Comparison 1](examples/tonelayers/compare_1.jpg)
+![Comparison 2](examples/tonelayers/compare_2.jpg)
+![Comparison 3](examples/tonelayers/compare_3.jpg)
+![Comparison 4](examples/tonelayers/compare_4.jpg)
+
+Layered output (transparent areas shown as a checkerboard):
+
+![Layers](examples/tonelayers/layers.jpg)
+
+Gradation output vs screentone output:
+
+![Gradation output](examples/tonelayers/gradation.jpg)
+
+### Nodes
+
+**Manga Finish Layers (Tone / Solid RGBA)** — Manga Finish split into layers. Outputs `light_tone`, `dark_tone`, `solid` (RGBA) and the `white_point` / `black_point` actually used. Inputs not in Manga Finish:
+
+| Input | Default | |
+|---|---|---|
+| level_mode | auto | `auto`: white / black point from the image (multi-Otsu; the two widgets are greyed out). `manual`: use `white_point` / `black_point` |
+| tone_split | 0 | Density where gradation moves from the light to the dark layer. 0 = midway between the two tones |
+| tone_output | gradation (smooth) | Smooth density masks, or screentone dots |
+| mask_scale | density | Smooth mode: alpha = real tone density, or stretched so each layer's tone is alpha 1 |
+| lines_in_solid | true | Put the pen lines into the solid layer (off: filled blacks only) |
+| ink_color | #000000 | Ink colour of all layers |
+| line_cleanup | 0.4 | Stroke detection that ignores grain and the rims of highlights (no ragged fuzz around hair lines). 0 = as Manga Finish |
+| tone_flatten | 0 | 1 = no gradation, every tone flat |
+| line_antialias | 0 | Antialiasing of the solid layer; the tone runs under the soft edge, so there is no white fringe |
+
+**Manga Solid Refine (Tone Fill)** — takes the three layers and `refined` (the solid layer redrawn by an edit model, black on white) and returns the final three layers.
+
+| Input | Default | |
+|---|---|---|
+| threshold / edge_softness / despeckle | 0.5 / 0.2 / 12 | How the redraw becomes the new solid layer: black cut-off, edge softness, removal of small specks and pinholes |
+| tone_fill | 1.0 | How strongly lost blacks are filled with the surrounding gradation. 0 = leave them white |
+| fill_floor | 1.0 | Minimum density for a vanished black mass, even on white surroundings |
+| tone_flatten | 0.7 | Pull the tones toward each layer's flat level. 1 = completely flat |
+| line_antialias | 0.5 | Antialiasing of the final solid layer |
+| tone_output / screen_lines | screentone (dots) / 250 | Screentone dots (one 45° screen for both layers, no moiré) or smooth gradation |
+
+**Manga Layer Flatten** — stacks RGBA layers onto paper as an RGB image (to feed the solid layer to Qwen, or to preview the page).
+
+### Workflow
+
+**QWEN-Manga-ToneLayers** (`workflows/QWEN-Manga-ToneLayers.json`) — the details are grouped into subgraphs; on the canvas you only see the input image, Manga Finish Layers, Manga Solid Refine and the outputs.
+
+1. *Stage 1: Qwen Manga Redraw* — the same redraw as QWEN-Manga, plus the pen lines → **Manga Finish Layers**
+2. *Stage 2: Qwen Solid Cleanup* — Qwen redraws the solid layer as clean line art and blacks → **Manga Solid Refine** → light tone / dark tone / solid previews (right-click → Save Image for transparent PNGs)
+
+The edit instructions (`edit_instruction`, `cleanup_instruction`) and the stage 2 seed can be edited on the subgraph nodes. Models and requirements are the same as the QWEN-Manga workflow below.
+
+### Install
+
+```
+cd ComfyUI/custom_nodes
+git clone https://github.com/hirazisora/ComfyUI-MangaScreen
+```
+
+Use either this fork or the original, not both: they register the same node names.
+
+## フォークでの追加・変更点
+
+- **一次処理後に線画・ベタをブラッシュアップし、トーンで補間** — 一次処理で作った solid（線画＋ベタ）を Qwen-Image できれいな線画とベタに描き直します。描き直しで黒でなくなった部分は、周囲のグラデーションから続けてトーンレイヤーに補間するので、穴が空きません。
+- **レイヤー分け出力** — 薄いトーン・濃いトーン・solid（線画＋ベタ）を、互いに重ならない3枚の透過 PNG で出力します。
+- **トーン領域のグラデーション出力** — トーンを網点ではなく滑らかな濃淡マスクで出力できます。Clip Studio Paint などで修正し、好きなスクリーントーンを貼る使い方を想定しています。網点での出力もできます。
+- **元画像からトーン化の基準値を自動設定** — `level_mode: auto` で、紙・薄いトーン・濃いトーン・ベタを分ける white_point / black_point を、画像の明るさの分布から multi-Otsu 法で自動で決めます。
+
+### オリジナル版との比較
+
+段階1の Qwen-Image による描き直しは両方で同じもの（シード固定）を使っています。*Original* は QWEN-Manga ワークフローの設定の Manga Finish ノード、*This fork* は QWEN-Manga-ToneLayers ワークフローの既定設定です（3レイヤーを白地に重ねたもの）。比較画像・レイヤー出力・グラデーション出力の図は英語セクションにあります。
+
+### ノード
+
+- **Manga Finish Layers (Tone / Solid RGBA)** — Manga Finish をレイヤーに分けたもの。`light_tone` / `dark_tone` / `solid`（RGBA）と、実際に使われた `white_point` / `black_point` を出力します。追加の入力は `level_mode`（auto / manual）、`tone_split`、`tone_output`（グラデーション / 網点）、`mask_scale`、`lines_in_solid`、`ink_color`、`line_cleanup`（髪などの線の周りのガビガビを防ぐ）、`tone_flatten`（トーンの単調化）、`line_antialias` です。
+- **Manga Solid Refine (Tone Fill)** — 3レイヤーと、Qwen などで描き直した solid（`refined`）を受け取り、清書後の solid と、消えた黒を補間したトーンを出力します。`tone_fill`（補間の強さ）、`fill_floor`（消えたベタの塊の最低濃度）、`tone_flatten`、`line_antialias`、`tone_output`（網点 / グラデーション）、`screen_lines` などを調整できます。
+- **Manga Layer Flatten** — RGBA レイヤーを紙の上に重ねて RGB 画像にします（solid を Qwen に渡すときやページのプレビュー用）。
+
+各パラメータの説明はノードのツールチップ（日本語）にもあります。
+
+### ワークフロー
+
+**QWEN-Manga-ToneLayers**（`workflows/QWEN-Manga-ToneLayers.json`）— 細かいノードはサブグラフにまとめてあり、画面には画像入力・Manga Finish Layers・Manga Solid Refine・各出力だけが出ます。
+
+1. *Stage 1: Qwen Manga Redraw* — QWEN-Manga と同じ描き直しとペン線の抽出 → **Manga Finish Layers**
+2. *Stage 2: Qwen Solid Cleanup* — solid を Qwen で線画＋ベタに清書 → **Manga Solid Refine** → 薄いトーン / 濃いトーン / solid のプレビュー（右クリック → Save Image で透過 PNG を保存）
+
+指示文（`edit_instruction`、`cleanup_instruction`）と段階2のシードは、サブグラフのノード上で編集できます。必要なモデルなどは下の QWEN-Manga ワークフローと同じです。
+
+### インストール
+
+```
+cd ComfyUI/custom_nodes
+git clone https://github.com/hirazisora/ComfyUI-MangaScreen
+```
+
+オリジナル版とは同じノード名を登録するので、どちらか一方だけを入れてください。
+
+---
+
+# ComfyUI-MangaScreen (original README)
 
 A manga / black & white comic filter for ComfyUI. Turn an illustration into a clean B&W manga or comic page — lines kept crisp, values pushed into a few flat areas, real screentone only where it belongs.
 
@@ -203,4 +320,4 @@ git clone https://github.com/ashukae/ComfyUI-MangaScreen
 
 ## License
 
-MIT
+MIT. Original nodes © ashukae; tone layer additions of this fork (tone_layers.py, js/, the QWEN-Manga-ToneLayers workflow) © hirazisora.
